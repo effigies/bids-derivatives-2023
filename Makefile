@@ -14,12 +14,12 @@ push-talk:
 	-git add docs/talk/*
 	-git add docs/talk/images/*
 	-git add talk/images/*
-	git commit -a -m"updating changed files"
+	git commit -a -m"updating changed files" || true
 	git push origin main
 
 render-site:
 	-rm docs/index.html
-	-git commit -a -m"updating site files"
+	-git commit -a -m"updating site files" || true
 	cd site && quarto render index.qmd
 
 push-site:
@@ -28,7 +28,7 @@ push-site:
 	git push origin main
 
 render-pdf:
-	-mkdir docs/pdfs
+	-mkdir -p docs/pdfs
 	decktape reveal -s 1920x1080 docs/talk/talk.html docs/pdfs/$(TAG).pdf
 
 push-pdf:
