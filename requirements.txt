@@ -1,0 +1,6 @@
+pygithub
+jupyter
+jupytext
+pandas
+requests
+gitpython
