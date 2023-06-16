@@ -449,7 +449,7 @@ Probabilistic/partial-volume segmentations are 4D images with values between
   * Not obviously relevant to PET, but it may come up
 
 
-## Unsolicited opinions
+## Opinionated advice
 
 ::: {.fragment .fade-in-then-semi-out}
 
