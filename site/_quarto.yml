@@ -3,10 +3,10 @@ project:
   output-dir: ../docs
 
 website:
-  title: "Template talk"
+  title: "BIDS Derivatives"
   navbar:
     left:
-      - href: https://github.com/effigies/talks-template
+      - href: https://github.com/effigies/bids-derivatives-2023
         text: Github page
 
 format:
