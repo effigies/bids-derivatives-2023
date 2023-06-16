@@ -25,7 +25,7 @@
     "href": "talk.html#more-history",
     "title": "BIDS Derivatives",
     "section": "More history",
-    "text": "More history\n\nAug 2018: (BIDS Derivatives Workshop @ Stanford)\n\n- Sub-BEPs worked on mostly independently\n\n\n- Introduction of “Common Derivatives”, finding the points of agreement\n\n\n\n\nDec 2018\n\n- Release Candidate 1 (bids-spec#109) with large components of structural, functional, diffusion\n\n\n\n\nApr 2019\n\n- Move to community-managed branch/PR (bids-spec#207)\n\n\n- This turned out to be unreviewable, so…\n\n\n\n\nJul 2019\n\n- Common Derivatives and BEPs 011, 012 and 016 return\n\n\n\n\nJun 2020\n\n- Common derivatives are included in BIDS 1.4.0 release"
+    "text": "More history\n\nAug 2018: (BIDS Derivatives Workshop @ Stanford)\n\n- Sub-BEPs worked on mostly independently\n\n\n- “Common Derivatives” refined by polling sub-BEPs, finding the points of agreement\n\n\n\n\nDec 2018\n\n- Release Candidate 1 (bids-spec#109) with large components of structural, functional, diffusion\n\n\n\n\nApr 2019\n\n- Move to community-managed branch/PR (bids-spec#207)\n\n\n- This turned out to be unreviewable, so…\n\n\n\n\nJul 2019\n\n- Common Derivatives and BEPs 011, 012 and 016 return\n\n\n\n\nJun 2020\n\n- Common derivatives are included in BIDS 1.4.0 release"
   },
   {
     "objectID": "talk.html#changes-to-common-principles",
