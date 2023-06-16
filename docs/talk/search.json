@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "talk.html#outline",
+    "href": "talk.html#outline",
+    "title": "BIDS Derivatives",
+    "section": "Outline",
+    "text": "Outline\n\nThe Evolution of BIDS Derivatives\n\nOverview of BIDS Common Derivatives\n\nOpen Questions and Other BEPs"
+  },
+  {
+    "objectID": "talk.html#a-brief-history-of-derivatives",
+    "href": "talk.html#a-brief-history-of-derivatives",
+    "title": "BIDS Derivatives",
+    "section": "A brief history of derivatives",
+    "text": "A brief history of derivatives\n\nFeb 2016: Working document\n\n- Initially covers coregistered volumes, affine/warp transforms, confound regressors, brain masks\n\n\n\n\nMar 2016 - Mar 2017\n\n- Expansion: estimated field maps, artifact corrections, ROI masks, discrete and probabilistic segmentations, tracts/tractograms, diffusion maps\n\n\n- Consolidation: artifact corrections and coregistrations become “minimally processed”\n\n\n- Pipeline descriptions add coarse provenance\n\n\n\n\nApr 2017\n\n- Dubbed “BEP 003: The BIDS Derivatives Specification”\n\n\n\n\nAug 2017: (BIDS Apps Workshop @ Stanford)\n\n- BEP 003 becomes “Common Derivatives”, BEPs 011-016 are spawned"
+  },
+  {
+    "objectID": "talk.html#interlude---sub-beps",
+    "href": "talk.html#interlude---sub-beps",
+    "title": "BIDS Derivatives",
+    "section": "Interlude - Sub-BEPs",
+    "text": "Interlude - Sub-BEPs\n\nBEP 011 - Structural MRI preprocessing derivatives\nBEP 012 - Task MRI preprocessing derivatives\nBEP 013 - Resting MRI preprocessing derivatives\nBEP 014 - Affine transformation and nonlinear warp fields\nBEP 015 - Derivative mapping file\nBEP 016 - Diffusion weighted imaging derivatives\n\n\n\nLater, related BEPs\n\nBEP 017 - Generic BIDS connectivity data schema\nBEP 021 - Common electrophysiological derivatives\nBEP 023 - PET preprocessing derivatives\nBEP 028 - BIDS Provenance\nBEP 038 - Atlases\nBEP 039 - Dimensionality reduction-based networks"
+  },
+  {
+    "objectID": "talk.html#more-history",
+    "href": "talk.html#more-history",
+    "title": "BIDS Derivatives",
+    "section": "More history",
+    "text": "More history\n\nAug 2018: (BIDS Derivatives Workshop @ Stanford)\n\n- Sub-BEPs worked on mostly independently\n\n\n- Introduction of “Common Derivatives”, finding the points of agreement\n\n\n\n\nDec 2018\n\n- Release Candidate 1 (bids-spec#109) with large components of structural, functional, diffusion\n\n\n\n\nApr 2019\n\n- Move to community-managed branch/PR (bids-spec#207)\n\n\n- This turned out to be unreviewable, so…\n\n\n\n\nJul 2019\n\n- Common Derivatives and BEPs 011, 012 and 016 return\n\n\n\n\nJun 2020\n\n- Common derivatives are included in BIDS 1.4.0 release"
+  },
+  {
+    "objectID": "talk.html#changes-to-common-principles",
+    "href": "talk.html#changes-to-common-principles",
+    "title": "BIDS Derivatives",
+    "section": "Changes to Common Principles",
+    "text": "Changes to Common Principles\nDataset organization\n\n\nSub-dataset\nmy_dataset/\n  derivatives/\n    preprocessed/\n    analysis/\n  sub-01/\n  ...\n\nSibling dataset\nmy_study/\n  raw_data/\n    sub-01/\n    ...\n  derivatives/\n    preprocessed/\n    analysis/\n\nSuper-dataset (new)\nmy_analysis/\n  sourcedata/\n    raw/\n    preprocessed/\n  sub-01/\n  ...\n\n\nDeeply nested (YODA)\nmy_analysis/\n  sourcedata/\n    preprocessed/\n      sourcedata/\n        raw/\n          sub-01/\n          ...\n      sub-01/\n      ...\n  sub-01/\n  ...\n\n\n\n\n\nNon-compliant derivatives\n\nNothing in this specification should be interpreted to disallow the storage/distribution of non-compliant derivatives of BIDS datasets. In particular, if a BIDS dataset contains a derivatives/ subdirectory, the contents of that directory may be a heterogeneous mix of BIDS Derivatives datasets and non-compliant derivatives.\n\nMany public datasets already include non-conformant derivatives. This balances attempts to define validatable derivatives while not penalizing people for sharing before the spec existed."
+  },
+  {
+    "objectID": "talk.html#dataset-description",
+    "href": "talk.html#dataset-description",
+    "title": "BIDS Derivatives",
+    "section": "Dataset description",
+    "text": "Dataset description\n\nNew fields were introduced for all datasets:\n\nDatasetType indicates \"raw\" or \"derivative\" data.\nGeneratedBy contains references to the code (including versions) that produced the derivative dataset.\nSourceDatasets is a list of references to the specific version of the dataset analyzed.\n\n\n{\n  \"Name\": \"FMRIPREP Outputs\",\n  \"BIDSVersion\": \"1.4.0\",\n  \"DatasetType\": \"derivative\",\n  \"GeneratedBy\": [\n    {\n      \"Name\": \"fmriprep\",\n      \"Version\": \"1.4.1\",\n      \"Container\": {\"Type\": \"docker\", \"Tag\": \"poldracklab/fmriprep:1.4.1\"}\n    },\n    {\n      \"Name\": \"Manual\",\n      \"Description\": \"Re-added RepetitionTime metadata to bold.json files\"\n    }\n  ],\n  \"SourceDatasets\": [\n    {\n      \"DOI\": \"doi:10.18112/openneuro.ds000114.v1.0.1\",\n      \"URL\": \"https://openneuro.org/datasets/ds000114/versions/1.0.1\",\n      \"Version\": \"1.0.1\"\n    }\n  ]\n}"
+  },
+  {
+    "objectID": "talk.html#derivatives-file-naming",
+    "href": "talk.html#derivatives-file-naming",
+    "title": "BIDS Derivatives",
+    "section": "Derivatives file-naming",
+    "text": "Derivatives file-naming\n\nForm: &lt;source_entities&gt;[_&lt;key&gt;-&lt;value&gt;]_&lt;suffix&gt;.&lt;ext&gt;\nRules:\n\nDerivative files must have some way, such as a new entity or suffix, to distinguish them from raw files.\nThe free-form desc-&lt;label&gt; entity may be used in any derivative file.\n“Source entities” should be preserved unless they no longer apply.\n\nFor example, combining across runs, the run-&lt;index&gt; entity should be dropped.\n\nRaw files may be included in a derivatives dataset without additional entities.\n\n\nAdditionally, the space-&lt;label&gt; entity is almost always permissible to indicate resampled data."
+  },
+  {
+    "objectID": "talk.html#derivatives-common-metadata",
+    "href": "talk.html#derivatives-common-metadata",
+    "title": "BIDS Derivatives",
+    "section": "Derivatives common metadata",
+    "text": "Derivatives common metadata\n\nMost metadata is optional but encouraged.\nRaw metadata that still applies to derivatives should be propagated.\nFree-text \"Description\" is always RECOMMENDED.\n\"Sources\" is always at least OPTIONAL (specific derivatives can make RECOMMENDED or REQUIRED).\n\n\n\nSpatial references\n\n\"SpatialReference\" provides an explicit link to local or remote files.\nBIDS defines standard template identifiers (see Appendix: Coordinate systems). space-MNI305, for example, does not require \"SpatialReference\".\nIn the absence of explicit entities/metadata, an image is in space \"orig\" and is its own reference.\nIf the &lt;label&gt; in space-&lt;label&gt; is not part of the BIDS-defined standard template identifiers, SpatialReference is required."
+  },
+  {
+    "objectID": "talk.html#preprocessed-or-cleaned-data",
+    "href": "talk.html#preprocessed-or-cleaned-data",
+    "title": "BIDS Derivatives",
+    "section": "Preprocessed or cleaned data",
+    "text": "Preprocessed or cleaned data\n\n\nData is considered to be preprocessed or cleaned if the data type of the input, as expressed by the BIDS suffix, is unchanged.\n\n\nTemplate:\n&lt;pipeline_name&gt;/\n    sub-&lt;label&gt;/\n        &lt;datatype&gt;/\n            &lt;source_entities&gt;[_space-&lt;space&gt;][_desc-&lt;label&gt;]_&lt;suffix&gt;.&lt;ext&gt;\nExamples:\npipeline1/\n  sub-01/\n    anat/\n      sub-01_space-MNI305_T1w.nii.gz\n      sub-01_space-MNI305_T1w.json\n    eeg/\n      sub-01_task-rest_desc-filtered_eeg.edf\n      sub-01_task-rest_desc-filtered_eeg.json\n    func/\n      sub-01_task-rest_space-MNI305_desc-preproc_bold.nii.gz\n      sub-01_task-rest_space-MNI305_desc-preproc_bold.json"
+  },
+  {
+    "objectID": "talk.html#imaging-derivatives",
+    "href": "talk.html#imaging-derivatives",
+    "title": "BIDS Derivatives",
+    "section": "Imaging derivatives",
+    "text": "Imaging derivatives\nSome derivatives common to MRI modalities were encoded. With the addition of electrophysiology and PET, these were reclassified from “common” to “imaging”.\nResampled volumes\nAdds resolution (res-&lt;label&gt;) and density (den-&lt;label&gt;) entities:\nfmriprep/\n  sub-01/\n    anat/\n      sub-01_space-MNI152NLin2009cAsym_res-2_desc-preproc_T1w.nii.gz\n    func/\n      sub-01_task-rest_space-MNI152NLin2009cAsym_res-2_desc-preproc_bold.nii.gz\n\nMasks\nmanual_masks/\n  sub-01/\n    anat/\n      sub-01_desc-lesion_mask.nii.gz\n      sub-01_desc-lesion_mask.json\nlocalizer/\n  sub-01/\n    func/\n      sub-01_task-loc_space-individual_label-FFA_mask.nii.gz\n      sub-01_task-loc_space-individual_label-FFA_mask.json"
+  },
+  {
+    "objectID": "talk.html#imaging-derivatives-continued",
+    "href": "talk.html#imaging-derivatives-continued",
+    "title": "BIDS Derivatives",
+    "section": "Imaging derivatives (continued)",
+    "text": "Imaging derivatives (continued)\nDiscrete and probabilistic segmentations\nExample:\ntissue_segmentation/\n  desc-AAL_dseg.tsv\n  desc-AAL_probseg.json\n  sub-01/\n    func/\n      sub-01_task-rest_desc-AAL_dseg.nii.gz\n      sub-01_task-rest_desc-AAL_probseg.nii.gz\nDiscrete segmentations are 3D images with integer values, following either a default label convention or as specified in dseg.tsv:\n\n\ndesc-AAL_dseg.tsv\n\nindex   name\n1       Precentral_L\n2       Precentral_R\n3       Frontal_Sup_L\n4       Frontal_Sup_R\n...\n\nProbabilistic/partial-volume segmentations are 4D images with values between 0 and 1, with labels identified in a corresponding JSON file:\n\n\ndesc-AAL_probseg.json\n\n{\"LabelMap\": [\"Precentral_L\", ...]}"
+  },
+  {
+    "objectID": "talk.html#possibly-relevant-precedents",
+    "href": "talk.html#possibly-relevant-precedents",
+    "title": "BIDS Derivatives",
+    "section": "Possibly relevant precedents",
+    "text": "Possibly relevant precedents\nBEP011: Anatomical derivatives\n\nSurface-sampled measures (_&lt;suffix&gt;.shape.gii)\nTabular morphometry statistics (_morph.tsv)\n\nBEP012: Functional derivatives\n\nSummary statistics (_&lt;mean|std|...&gt;.nii.gz)\nTime series\n\nGeneric, including ROI summary, time series (_timeseries.&lt;tsv|nii[.gz]&gt;)\nSpecial cases (_motion.tsv, _outliers.tsv)\nSpatiotemporal decompositions (_&lt;components|mixing&gt;.&lt;tsv|nii[.gz]&gt;)\n\n\nBEP014: Transformations and mappings\n\nAffine matrices (_xfm.&lt;ext&gt;)"
+  },
+  {
+    "objectID": "talk.html#possibly-relevant-precedents-1",
+    "href": "talk.html#possibly-relevant-precedents-1",
+    "title": "BIDS Derivatives",
+    "section": "Possibly relevant precedents",
+    "text": "Possibly relevant precedents\nBEP016: Diffusion derivatives\n\nModel fit parameters (_model.nii.gz)\nModel-derived parameters (_mdp.nii.gz)\nmodel-&lt;label&gt; and param-&lt;label&gt; entities\n\nBEP038: Atlases\n\nPromotes atlas-&lt;label&gt; from Imaging data types - Segmentations to something subject-like\nIntroduces some summary statistics in passing (c.f. BEP012)\n\nBEP039: Dimensionality reduction-based networks\n\ngroup/ and group-&lt;label&gt;/ replacing sub-&lt;label&gt;/\nmodel-&lt;label&gt;/ directory under datatype (anat/, pet/, etc.)\n\nBEP028: BIDS Provenance\n\nJSON-LD files at file (*_prov.jsonld) and/or dataset (/prov.jsonld) level."
+  },
+  {
+    "objectID": "talk.html#open-questions",
+    "href": "talk.html#open-questions",
+    "title": "BIDS Derivatives",
+    "section": "Open questions",
+    "text": "Open questions\n\nGroup “subjects”\n\nStatus quo: Drop subject label when combining across subjects\nBare group/ with no subject labels?\ngroup-&lt;label&gt;/ that acts like a subject?\ngroup-&lt;label&gt;/ that is an additional level (e.g., group-A/[sub-01/])?\n\n\n\n\nAdditional levels in the hierarchy\n\nBEP-039 introduces model-&lt;label&gt;/ at bottom of hierarchy.\nFitLins (BEP-002 Stats Models implementation) uses node-&lt;label&gt;/ at top of hierarchy.\n\n\n\n\n\nN-dimensional array files (bids-spec#197)\n\nNot obviously relevant to PET, but it may come up"
+  },
+  {
+    "objectID": "talk.html#unsolicited-opinions",
+    "href": "talk.html#unsolicited-opinions",
+    "title": "BIDS Derivatives",
+    "section": "Unsolicited opinions",
+    "text": "Unsolicited opinions\n\n\nThere is a tendency to try to specify everything, and pull back to the least common denominator.\n\nThere will be things you think are important that have to get dropped.\nFor example, we had individual derivatives for motion correction, bias field correction, resampling. They are now covered by space-&lt;label&gt; and desc-&lt;label&gt;.\n\n\n\n\n\nEvery rule needs implementing at least twice.\n\nPrioritize validator, then producers, then consumers.\nMinimizing new concepts eases implementation.\n\n\n\n\n\nDetailed provenance should probably target BEP028. Resist the urge to specify everything in JSON.\n\nYou need enough for humans to follow along, and downstream tools to make decisions.\nTools can still add what their authors and users think is important."
+  }
+]
