@@ -91,7 +91,7 @@ Aug 2017: (BIDS Apps Workshop @ Stanford)
 
 Aug 2018: (BIDS Derivatives Workshop @ Stanford)
 : \- Sub-BEPs worked on mostly independently
-: \- Introduction of "Common Derivatives", finding the points of agreement
+: \- "Common Derivatives" refined by polling sub-BEPs, finding the points of agreement
 
 <br>
 
