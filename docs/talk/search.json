@@ -98,10 +98,10 @@
     "text": "Open questions\n\nGroup “subjects”\n\nStatus quo: Drop subject label when combining across subjects\nBare group/ with no subject labels?\ngroup-&lt;label&gt;/ that acts like a subject?\ngroup-&lt;label&gt;/ that is an additional level (e.g., group-A/[sub-01/])?\n\n\n\n\nAdditional levels in the hierarchy\n\nBEP-039 introduces model-&lt;label&gt;/ at bottom of hierarchy.\nFitLins (BEP-002 Stats Models implementation) uses node-&lt;label&gt;/ at top of hierarchy.\n\n\n\n\n\nN-dimensional array files (bids-spec#197)\n\nNot obviously relevant to PET, but it may come up"
   },
   {
-    "objectID": "talk.html#unsolicited-opinions",
-    "href": "talk.html#unsolicited-opinions",
+    "objectID": "talk.html#opinionated-advice",
+    "href": "talk.html#opinionated-advice",
     "title": "BIDS Derivatives",
-    "section": "Unsolicited opinions",
-    "text": "Unsolicited opinions\n\n\nThere is a tendency to try to specify everything, and pull back to the least common denominator.\n\nThere will be things you think are important that have to get dropped.\nFor example, we had individual derivatives for motion correction, bias field correction, resampling. They are now covered by space-&lt;label&gt; and desc-&lt;label&gt;.\n\n\n\n\n\nEvery rule needs implementing at least twice.\n\nPrioritize validator, then producers, then consumers.\nMinimizing new concepts eases implementation.\n\n\n\n\n\nDetailed provenance should probably target BEP028. Resist the urge to specify everything in JSON.\n\nYou need enough for humans to follow along, and downstream tools to make decisions.\nTools can still add what their authors and users think is important."
+    "section": "Opinionated advice",
+    "text": "Opinionated advice\n\n\nThere is a tendency to try to specify everything, and pull back to the least common denominator.\n\nThere will be things you think are important that have to get dropped.\nFor example, we had individual derivatives for motion correction, bias field correction, resampling. They are now covered by space-&lt;label&gt; and desc-&lt;label&gt;.\n\n\n\n\n\nEvery rule needs implementing at least twice.\n\nPrioritize validator, then producers, then consumers.\nMinimizing new concepts eases implementation.\n\n\n\n\n\nDetailed provenance should probably target BEP028. Resist the urge to specify everything in JSON.\n\nYou need enough for humans to follow along, and downstream tools to make decisions.\nTools can still add what their authors and users think is important."
   }
 ]
