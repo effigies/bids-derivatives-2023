@@ -4,7 +4,7 @@
     "href": "talk.html#outline",
     "title": "BIDS Derivatives",
     "section": "Outline",
-    "text": "Outline\n\nThe Evolution of BIDS Derivatives\n\nOverview of BIDS Common Derivatives\n\nOpen Questions and Other BEPs"
+    "text": "Outline\n\nThe Evolution of BIDS Derivatives\n\nOverview of BIDS Common Derivatives\n\nOther BEPs and Open Questions"
   },
   {
     "objectID": "talk.html#a-brief-history-of-derivatives",
@@ -74,7 +74,7 @@
     "href": "talk.html#imaging-derivatives-continued",
     "title": "BIDS Derivatives",
     "section": "Imaging derivatives (continued)",
-    "text": "Imaging derivatives (continued)\nDiscrete and probabilistic segmentations\nExample:\ntissue_segmentation/\n  desc-AAL_dseg.tsv\n  desc-AAL_probseg.json\n  sub-01/\n    func/\n      sub-01_task-rest_desc-AAL_dseg.nii.gz\n      sub-01_task-rest_desc-AAL_probseg.nii.gz\nDiscrete segmentations are 3D images with integer values, following either a default label convention or as specified in dseg.tsv:\n\n\ndesc-AAL_dseg.tsv\n\nindex   name\n1       Precentral_L\n2       Precentral_R\n3       Frontal_Sup_L\n4       Frontal_Sup_R\n...\n\nProbabilistic/partial-volume segmentations are 4D images with values between 0 and 1, with labels identified in a corresponding JSON file:\n\n\ndesc-AAL_probseg.json\n\n{\"LabelMap\": [\"Precentral_L\", ...]}"
+    "text": "Imaging derivatives (continued)\nDiscrete and probabilistic segmentations\nExample:\ntissue_segmentation/\n  desc-AAL_dseg.tsv\n  desc-AAL_probseg.json\n  sub-01/\n    func/\n      sub-01_task-rest_desc-AAL_dseg.nii.gz\n      sub-01_task-rest_desc-AAL_probseg.nii.gz\nDiscrete segmentations are 3D images with integer values, following either a default label convention or as specified in dseg.tsv:\n\n\ndesc-AAL_dseg.tsv\n\nindex   name\n1       Precentral_L\n2       Precentral_R\n3       Frontal_Sup_L\n4       Frontal_Sup_R\n...\n\nProbabilistic/partial-volume segmentations are 4D images with values between 0 and 1, with labels identified in a corresponding JSON file:\n\n\ndesc-AAL_probseg.json\n\n{\"LabelMap\": [\"Precentral_L\", \"Precentral_R\", \"Frontal_Sup_L\", ...]}"
   },
   {
     "objectID": "talk.html#possibly-relevant-precedents",
