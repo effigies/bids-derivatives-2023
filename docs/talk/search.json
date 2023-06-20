@@ -67,7 +67,7 @@
     "href": "talk.html#imaging-derivatives",
     "title": "BIDS Derivatives",
     "section": "Imaging derivatives",
-    "text": "Imaging derivatives\nSome derivatives common to MRI modalities were encoded. With the addition of electrophysiology and PET, these were reclassified from “common” to “imaging”.\nResampled volumes\nAdds resolution (res-&lt;label&gt;) and density (den-&lt;label&gt;) entities:\nfmriprep/\n  sub-01/\n    anat/\n      sub-01_space-MNI152NLin2009cAsym_res-2_desc-preproc_T1w.nii.gz\n    func/\n      sub-01_task-rest_space-MNI152NLin2009cAsym_res-2_desc-preproc_bold.nii.gz\n\nMasks\nmanual_masks/\n  sub-01/\n    anat/\n      sub-01_desc-lesion_mask.nii.gz\n      sub-01_desc-lesion_mask.json\nlocalizer/\n  sub-01/\n    func/\n      sub-01_task-loc_space-individual_label-FFA_mask.nii.gz\n      sub-01_task-loc_space-individual_label-FFA_mask.json"
+    "text": "Imaging derivatives\nSome derivatives common to MRI modalities were encoded. With the addition of electrophysiology and PET, these were reclassified from “common” to “imaging”.\nResampled volumes\nAdds resolution (res-&lt;label&gt;) and density (den-&lt;label&gt;) entities:\nfmriprep/\n  sub-01/\n    anat/\n      sub-01_space-MNI152NLin2009cAsym_res-2_desc-preproc_T1w.nii.gz\n    func/\n      sub-01_task-rest_space-MNI152NLin2009cAsym_res-2_desc-preproc_bold.nii.gz\n\nBinary masks\nmanual_masks/\n  sub-01/\n    anat/\n      sub-01_desc-lesion_mask.nii.gz\n      sub-01_desc-lesion_mask.json\nlocalizer/\n  sub-01/\n    func/\n      sub-01_task-loc_space-individual_label-FFA_mask.nii.gz\n      sub-01_task-loc_space-individual_label-FFA_mask.json"
   },
   {
     "objectID": "talk.html#imaging-derivatives-continued",

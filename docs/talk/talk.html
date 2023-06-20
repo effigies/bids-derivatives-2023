@@ -697,7 +697,7 @@ Christopher J. Markiewicz
     func/
       sub-01_task-rest_space-MNI152NLin2009cAsym_res-2_desc-preproc_bold.nii.gz</code></pre>
 <p><br></p>
-<h3 id="masks">Masks</h3>
+<h3 id="binary-masks">Binary masks</h3>
 <pre><code>manual_masks/
   sub-01/
     anat/
@@ -725,19 +725,19 @@ localizer/
 <div class="code-with-filename-file">
 <pre><strong>desc-AAL_dseg.tsv</strong></pre>
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource tsv number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>index   name</span>
-<span id="cb11-2"><a href="#cb11-2"></a>1       Precentral_L</span>
-<span id="cb11-3"><a href="#cb11-3"></a>2       Precentral_R</span>
-<span id="cb11-4"><a href="#cb11-4"></a>3       Frontal_Sup_L</span>
-<span id="cb11-5"><a href="#cb11-5"></a>4       Frontal_Sup_R</span>
-<span id="cb11-6"><a href="#cb11-6"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="tsv" data-code-line-numbers="false"><code>index   name
+1       Precentral_L
+2       Precentral_R
+3       Frontal_Sup_L
+4       Frontal_Sup_R
+...</code></pre>
 </div>
 <p>Probabilistic/partial-volume segmentations are 4D images with values between 0 and 1, with labels identified in a corresponding JSON file:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>desc-AAL_probseg.json</strong></pre>
 </div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">{</span><span class="fu">"LabelMap"</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"Precentral_L"</span><span class="kw">,</span><span class="at"> ...</span><span class="kw">]}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12" data-code-line-numbers="false"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span><span class="fu">"LabelMap"</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"Precentral_L"</span><span class="kw">,</span><span class="at"> ...</span><span class="kw">]}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
