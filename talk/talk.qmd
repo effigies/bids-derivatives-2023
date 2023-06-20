@@ -68,8 +68,8 @@ Aug 2017: (BIDS Apps Workshop @ Stanford)
 ## Interlude - Sub-BEPs
 
 * [BEP 011](https://bids.neuroimaging.io/bep011) - Structural MRI preprocessing derivatives
-* [BEP 012](https://bids.neuroimaging.io/bep012) - Task MRI preprocessing derivatives
-* [BEP 013](https://bids.neuroimaging.io/bep013) - Resting MRI preprocessing derivatives
+* [BEP 012](https://bids.neuroimaging.io/bep012) - Task fMRI preprocessing derivatives
+* [BEP 013](https://bids.neuroimaging.io/bep013) - Resting fMRI preprocessing derivatives
 * [BEP 014](https://bids.neuroimaging.io/bep014) - Affine transformation and nonlinear warp fields
 * [BEP 015](https://bids.neuroimaging.io/bep015) - Derivative mapping file
 * [BEP 016](https://bids.neuroimaging.io/bep016) - Diffusion weighted imaging derivatives
