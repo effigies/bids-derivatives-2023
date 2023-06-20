@@ -335,7 +335,7 @@ fmriprep/
 
 <br>
 
-### Masks
+### Binary masks
 
 ```
 manual_masks/
@@ -369,7 +369,7 @@ tissue_segmentation/
 Discrete segmentations are 3D images with integer values, following either
 a default label convention or as specified in `dseg.tsv`:
 
-```{.tsv filename="desc-AAL_dseg.tsv"}
+```{.tsv filename="desc-AAL_dseg.tsv" code-line-numbers="false"}
 index   name
 1       Precentral_L
 2       Precentral_R
@@ -382,7 +382,7 @@ Probabilistic/partial-volume segmentations are 4D images with values between
 0 and 1, with labels identified in a corresponding JSON file:
 
 
-```{.yaml filename="desc-AAL_probseg.json"}
+```{.yaml filename="desc-AAL_probseg.json" code-line-numbers="false"}
 {"LabelMap": ["Precentral_L", ...]}
 ```
 
