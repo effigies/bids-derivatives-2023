@@ -18,7 +18,7 @@
     "href": "talk.html#interlude---sub-beps",
     "title": "BIDS Derivatives",
     "section": "Interlude - Sub-BEPs",
-    "text": "Interlude - Sub-BEPs\n\nBEP 011 - Structural MRI preprocessing derivatives\nBEP 012 - Task MRI preprocessing derivatives\nBEP 013 - Resting MRI preprocessing derivatives\nBEP 014 - Affine transformation and nonlinear warp fields\nBEP 015 - Derivative mapping file\nBEP 016 - Diffusion weighted imaging derivatives\n\n\n\nLater, related BEPs\n\nBEP 017 - Generic BIDS connectivity data schema\nBEP 021 - Common electrophysiological derivatives\nBEP 023 - PET preprocessing derivatives\nBEP 028 - BIDS Provenance\nBEP 038 - Atlases\nBEP 039 - Dimensionality reduction-based networks"
+    "text": "Interlude - Sub-BEPs\n\nBEP 011 - Structural MRI preprocessing derivatives\nBEP 012 - Task fMRI preprocessing derivatives\nBEP 013 - Resting fMRI preprocessing derivatives\nBEP 014 - Affine transformation and nonlinear warp fields\nBEP 015 - Derivative mapping file\nBEP 016 - Diffusion weighted imaging derivatives\n\n\n\nLater, related BEPs\n\nBEP 017 - Generic BIDS connectivity data schema\nBEP 021 - Common electrophysiological derivatives\nBEP 023 - PET preprocessing derivatives\nBEP 028 - BIDS Provenance\nBEP 038 - Atlases\nBEP 039 - Dimensionality reduction-based networks"
   },
   {
     "objectID": "talk.html#more-history",
