@@ -30,7 +30,7 @@ format:
 
 <br>
 
-### Open Questions and Other BEPs
+### Other BEPs and Open Questions
 
 
 <!-- 
@@ -383,7 +383,7 @@ Probabilistic/partial-volume segmentations are 4D images with values between
 
 
 ```{.yaml filename="desc-AAL_probseg.json" code-line-numbers="false"}
-{"LabelMap": ["Precentral_L", ...]}
+{"LabelMap": ["Precentral_L", "Precentral_R", "Frontal_Sup_L", ...]}
 ```
 
 # Other BEPs and Open Questions
